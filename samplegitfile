@@ -1,0 +1,12 @@
+ pipeline
+{
+agent any
+stages{
+stage("SCM")
+{ 
+steps{
+echo "This file is taken from GIT only"
+}
+}
+}
+}
