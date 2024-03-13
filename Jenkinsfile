@@ -12,7 +12,10 @@ pipeline{
         }
         stage("Maven Build")
         {
-            steps{
+         when{
+             branch = "Qa"
+	 }
+		steps{
                 sh "mvn clean package"
 		sh 'mv target/myweb*war target/myweb.war'
 
