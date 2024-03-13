@@ -7,7 +7,7 @@ pipeline{
         stage("SCM Checkout")
         {
             steps{
-                git 'https://github.com/TonStark3000/maven_java_web_example'
+                git 'https://github.com/javahometech/my-app'
             }
         }
         stage("Maven Build")
