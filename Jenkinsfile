@@ -14,7 +14,7 @@ pipeline{
         {
             steps{
                 sh "mvn clean package"
-		sh 'mv target/myweb*war target/myweb.war'
+		sh 'mv target/api*.war target/api.war'
 
             }
         }
@@ -22,7 +22,7 @@ pipeline{
         {
             steps{
                 sshagent(['Tomcat-1 ']) {
-                     sh "scp -o StrictHostKeyChecking=no target/myweb.war  ec2-user@172.31.36.140:/opt/tomcat-9/webapps"
+                     sh "scp -o StrictHostKeyChecking=no target/api.war  ec2-user@172.31.36.140:/opt/tomcat-9/webapps"
 
            }
             }
