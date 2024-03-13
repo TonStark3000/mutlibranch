@@ -13,7 +13,7 @@ pipeline{
         stage("Maven Build")
         {
          when{
-             branch = "Qa"
+             branch "Qa"
 	 }
 		steps{
                 sh "mvn clean package"
